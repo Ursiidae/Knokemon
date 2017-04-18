@@ -42,14 +42,38 @@
 	display: none;
 }
 
-.main td{
-	width:20%;
-	font-size: 15;
-}
-.sub{
-	display: none;
+.body > div {
+	width: 45%;
+	margin-left: 20px;
+	border: solid rgb(192, 224, 231) 3px;
+	display: inline-block;
+	overflow: hidden;
+	height: 350px;
 }
 
+.body > div > div{
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: rgb(0,39,101);
+	text-align: center;
+	
+} 
+.body > div > div > div {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: rgb(192, 224, 231); 
+	display: inline-block;
+}
+.body > div > img {
+	width: 100%;
+	
+}
+
+h3 {
+	font-style: italic;
+	
+}
 a {
         color: black;
         text-decoration: none;

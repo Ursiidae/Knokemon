@@ -2,40 +2,70 @@ CREATE DATABASE PokemonDB;
 USE PokemonDB;
 
 CREATE TABLE user(
-user_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-username varChar(16),
-password varChar(16),
+user_id        UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+username       varChar(16),
+password       varChar(16),
 permission_lvl int(4),
-email varChar(30),
-join_date varChar(10)
+email          varChar(30),
+join_date      DATE
 );
 
 CREATE TABLE permissions(
-permission_lvl int(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-name varChar(13),
-home boolean,
-pokedex boolean,
-my_account boolean,
-news boolean,
-forum boolean
+permission_lvl UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name           varChar(13),
+home           boolean,
+pokedex        boolean,
+my_pokedex     boolean,
+my_requests    boolean,
+account        boolean,
+profile        boolean,
+friends        boolean,
+news           boolean,
+forum          boolean
 );
 
 CREATE TABLE pokemon(
-pokemon_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-name varChar(30),
-number int(255),
-region varChar(20),
-type_id int(18),
-occurrence varChar(50)
+pokemon_id  UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name        varChar(30),
+number      int(802),
+kanto       boolean,
+johto       boolean,
+hoenn       boolean,
+sinnoe      boolean,
+unova       boolean,
+kalos       boolean,
+alola       boolean,
+type_id     int(18),
+occurrence  varChar(50)
 );
 
 CREATE TABLE type(
-type_id int(18) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-name varChar(30),
-immunity boolean,
-weakness varChar(3),
-strength varChar(3),
-resistance varChar(3)
+type_id     UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name        varChar(30),
+normal      int,
+fire        int,
+water       int,
+electric    int,
+grass       int,
+ice         int,
+fighting    int,
+poison      int,
+ground      int,
+flying      int,
+psychic     int,
+bug         int,
+rock        int,
+ghost       int,
+dragon      int,
+dark        int,
+steel       int,
+fairy       int
+);
+
+CREATE TABLE type_interacts(
+interact_id UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name        varchar(30),
+causal      double(3),
 );
 
 CREATE TABLE userPokedex(
@@ -59,3 +89,47 @@ FROM_user_id int(255),
 FOR_pokemon_id int(255),
 TO_pokemon_id int(255)
 );
+
+INSERT INTO permissions(name, home, pokedex, my_pokedex, my_requests, account, profile, friends, news, forum)
+  VALUES
+   ('unregistered',    true,  true, false, false, false, false, false, false, true,  true) 
+  ,('registered user', true,  true,  true,  true,  true,  true,  true,  true,  true, true)
+  ,('moderator',       true,  true,  true,  true,  true,  true,  true,  true,  true, true)
+  ,('admin',           true,  true,  true,  true,  true,  true,  true,  true,  true, true)
+  ;
+  
+INSERT INTO user(username, password, permission_lvl, email, join_date)
+  VALUES
+   ('ursiidae', 'cassieopia??!.', 3, frenchdeception@gmail.com, 04/18/2017)
+  ,('stexmex', 'thumbalena..1', 3, email@something.com, 04/18/2017)
+  ;
+ 
+INSERT INTO type_interacts(name, causal)
+  VALUES
+   ('no_effect',       0)
+  ,('uneffective',   1/2)
+  ,('normal',          1)
+  ,('super_effective', 2)
+  ;
+ 
+INSERT INTO type(name, normal, fire, water, electric, grass, ice, fighting, poison, ground, flying, psychic, bug, rock, ghost, dragon, dark, steel, fairy)
+  VALUES
+   (   'normal', 2,2,2,2,2,2,2,2,2,2,2,2,1,0,2,2,1,2)
+  ,(     'fire', 2,1,1,2,3,3,2,2,2,2,2,3,1,2,1,2,3,2)
+  ,(    'water', 2,3,1,2,1,2,2,2,3,2,2,2,3,2,1,2,2,2)
+  ,( 'electric', 2,2,3,1,1,2,2,2,0,3,2,2,2,2,1,2,2,2)
+  ,(    'grass', 2,1,3,2,1,2,2,1,3,1,2,1,3,2,1,2,1,2)
+  ,(      'ice', 2,1,1,2,3,1,2,2,3,3,2,2,2,2,3,2,1,2)
+  ,( 'fighting', 3,2,2,2,2,3,2,1,2,1,1,1,3,0,2,3,3,1)
+  ,(   'poison', 2,2,2,2,3,2,2,1,1,2,2,2,1,1,2,2,0,3)
+  ,(   'ground', 2,3,2,3,1,2,2,3,2,0,2,1,3,2,2,2,3,2)
+  ,(   'flying', 2,2,2,1,3,2,3,2,2,2,2,3,1,2,2,2,1,2)
+  ,(  'psychic', 2,2,2,2,2,2,3,3,2,2,1,2,2,2,2,0,1,2)
+  ,(      'bug', 2,1,2,2,3,2,1,1,2,1,3,2,2,1,2,3,1,1)
+  ,(     'rock', 2,3,2,2,2,3,1,2,1,3,2,3,2,2,2,2,1,2)
+  ,(    'ghost', 0,2,2,2,2,2,2,2,2,2,3,2,2,3,2,1,2,2)
+  ,(   'dragon', 2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,2,1,0)
+  ,(     'dark', 2,2,2,2,2,2,1,2,2,2,3,2,2,3,2,1,2,1)
+  ,(    'steel', 2,1,1,1,2,3,2,2,2,2,2,2,3,2,2,2,1,3)
+  ,(    'fairy', 2,1,2,2,2,2,3,1,2,2,2,2,2,2,3,3,1,2)
+  ;
