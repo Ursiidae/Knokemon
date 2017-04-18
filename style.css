@@ -9,18 +9,37 @@
   etc
  */
 
-
-#login{
-        display: block;
+.body {
+	border-left: solid rgb(192, 224, 231) .1mm;
+}
+.body > img {
+	width: 100%;
+	
+}
+#login> form{
+    display: block;
 	text-align:right;
 	float: right;
+	width: 35%;
 }
-#menu{
+#login > img {
+	width: 60%;
+}
+#menu_holder{
+	border-left-radius: 15px;
+	border-top-radius:15px;
+	border-bottom-radius: 15px;
 	width: 100%;
-	background: rgb(20,20,20);
-	color: rgb(255,255,255);
-	border-radius: 15px;
+	/*background: rgb(30,30,30);*/
+	background:rgb(192, 244, 231);
 	padding:10px;
+}
+#menu_holder > ul > li {
+	display: inline-block;
+	margin-right: 20px;
+}
+#menu_holder > ul > li > ul > li{
+	display: none;
 }
 
 .main td{
@@ -32,73 +51,6 @@
 }
 
 a {
-        color: white;
+        color: black;
         text-decoration: none;
 }
-
-.body{
-	margin-top: 0px;
-	margin-right: 20px;
-	margin-left: 20px;
-	background: rgb(190,190,190);
-	overflow: hidden;
-}
-
-table{
-  margin:auto;
-  text-align: center;
-}
-.space{
-  width:40px;
-}
-.img{
-  width: 300px;
-  background: white;
-}
-.text{
-  width:400px;
-  background: white;
-  border: solid rgb(204,049,002) 5px;
-  border-opacity: 
-}
-
-.pokedex_entry{
-  height: 200px;
-  width: 150px;
-  margin: 25px;
-  text-align: left;
-  float: left;
-  background: rgb(190,190,190);
-}
-.pokedex_entry img{
-  width: 75px;
-}
-
-
-/*
-with javascript null out once middle circle clicked
-==================
-#left{
-    opacity:0.8;
-    background-color:red;
-    position:fixed;
-    width:50%;
-    height:100%;
-    top:0px;
-    left:0px;
-    z-index:1000;
-}
-
-#right{
-    opacity:0.7;
-    background-color:rgb(20,20,20);
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0px;
-    left:50%;
-    z-index:1000;
-}
-
-*/
-
