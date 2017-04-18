@@ -1,0 +1,61 @@
+CREATE DATABASE PokemonDB;
+USE PokemonDB;
+
+CREATE TABLE user(
+user_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+username varChar(16),
+password varChar(16),
+permission_lvl int(4),
+email varChar(30),
+join_date varChar(10)
+);
+
+CREATE TABLE permissions(
+permission_lvl int(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name varChar(13),
+home boolean,
+pokedex boolean,
+my_account boolean,
+news boolean,
+forum boolean
+);
+
+CREATE TABLE pokemon(
+pokemon_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name varChar(30),
+number int(255),
+region varChar(20),
+type_id int(18),
+occurrence varChar(50)
+);
+
+CREATE TABLE type(
+type_id int(18) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name varChar(30),
+immunity boolean,
+weakness varChar(3),
+strength varChar(3),
+resistance varChar(3)
+);
+
+CREATE TABLE userPokedex(
+mix_id int(255),
+user_id int(255),
+pokedex_id int(255)
+);
+
+CREATE TABLE pokedex(
+pokedex_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name varChar(16),
+bulbasaur boolean,
+charmander boolean,
+squirtle boolean
+);
+
+CREATE TABLE request(
+request_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+TO_user_id int(255),
+FROM_user_id int(255),
+FOR_pokemon_id int(255),
+TO_pokemon_id int(255)
+);

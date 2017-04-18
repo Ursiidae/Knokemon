@@ -1,0 +1,37 @@
+#--To see if the user has the permission level for my requests page.
+SELECT user.name, permissions.my_requests
+  FROM user, permissions
+ WHERE user.permission_lvl = permission.permission_id; 
+
+
+#--is supposed to show who the request is from and who it is to and the pokemon they are to trade. 
+SELECT user.username, user.username, pokemon.name, pokemon.name, request.DATE_OF
+FROM requests, pokemon, user
+WHERE user.username = "casoleita" OR user.username = "stexmex"
+  AND request.TO_user_id = user.user_id
+  AND request.FROM_user_id = user.user_id
+  AND requests.FOR_pokemon_id = pokemon.pokemon_id
+  AND requests.TO_pokemon_id = pokemon.pokemon_id
+  ;
+
+#--shows which pokemon are of the grass type. 
+SELECT pokemon.name
+  FROM type, pokemon
+ WHERE type.name = grass
+   AND type.type_id = pokemon.type_id
+   ;
+
+#--what pokemon are not in kanto and what their types are.
+SELECT pokemon.name, type.name
+  FROM pokemon, type
+ WHERE pokemon.kanto = FALSE
+   AND pokemon.type_id = type.type_id
+   ;
+
+#--what types of pokemon a certain pokemon is immune to
+ SELECT pokemon.name, type.name, reaction.reacts
+   FROM pokemon, type, reaction
+  WHERE pokemon.name = 'pikachu'
+    AND pokemon.type_id = type.type_id
+    AND type.poison IF EQUAL TO 2
+    AND type.
