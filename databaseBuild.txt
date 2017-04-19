@@ -2,7 +2,7 @@ CREATE DATABASE PokemonDB;
 USE PokemonDB;
 
 CREATE TABLE user(
-user_id        UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+user_id        int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 username       varChar(16),
 password       varChar(16),
 permission_lvl int,
@@ -11,8 +11,8 @@ join_date      DATE
 );
 
 CREATE TABLE permissions(
-permission_lvl UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-name           varChar(13),
+permission_lvl int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name           varChar(25),
 home           boolean,
 pokedex        boolean,
 my_pokedex     boolean,
@@ -25,7 +25,7 @@ forum          boolean
 );
 
 CREATE TABLE pokemon(
-pokemon_id  UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+pokemon_id  int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name        varChar(30),
 number      int,
 kanto       boolean,
@@ -43,12 +43,12 @@ occurrence  int
 );
 
 CREATE TABLE occur(
-occur_id UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+occur_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 occuring varchar(32)
 );
 
 CREATE TABLE type(
-type_id     UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+type_id     int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name        varChar(30),
 normal      int,
 fire        int,
@@ -71,9 +71,9 @@ fairy       int
 );
 
 CREATE TABLE type_interacts(
-interact_id UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+interact_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name        varchar(30),
-causal      double(3),
+causal      double DEFAULT NULL
 );
 
 CREATE TABLE userPokedex(
@@ -83,7 +83,7 @@ pokedex_id int
 );
 
 CREATE TABLE pokedex(
-pokedex_id UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+pokedex_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name varChar(16),
 bulbasaur boolean,
 charmander boolean,
@@ -91,7 +91,7 @@ squirtle boolean
 );
 
 CREATE TABLE request(
-request_id     UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+request_id     int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 TO_user_id     int,
 FROM_user_id   int,
 FOR_pokemon_id int,
@@ -100,16 +100,16 @@ TO_pokemon_id  int
 
 INSERT INTO permissions(name, home, pokedex, my_pokedex, my_requests, account, profile, friends, news, forum)
   VALUES
-   ('unregistered',    true,  true, false, false, false, false, false, false, true,  true) 
-  ,('registered user', true,  true,  true,  true,  true,  true,  true,  true,  true, true)
-  ,('moderator',       true,  true,  true,  true,  true,  true,  true,  true,  true, true)
-  ,('admin',           true,  true,  true,  true,  true,  true,  true,  true,  true, true)
+   ('unregistered',    true,  true, false, false, false, false, false,  true,  true) 
+  ,('registered user', true,  true,  true,  true,  true,  true,  true,  true,  true)
+  ,('moderator',       true,  true,  true,  true,  true,  true,  true,  true,  true)
+  ,('admin',           true,  true,  true,  true,  true,  true,  true,  true,  true)
   ;
   
 INSERT INTO user(username, password, permission_lvl, email, join_date)
   VALUES
-   ('ursiidae', 'cassieopia??!.', 3, frenchdeception@gmail.com, 04/18/2017)
-  ,('stexmex', 'thumbalena..1', 3, email@something.com, 04/18/2017)
+   ('ursiidae', 'cassieopia??!.', 3, 'frenchdeception@gmail.com', '2017-04-18')
+  ,('stexmex', 'thumbalena..1', 3, 'email@something.com', '2017-04-18')
   ;
  
 INSERT INTO type_interacts(name, causal)
@@ -153,7 +153,7 @@ INSERT INTO occur(occuring)
   
 INSERT INTO pokemon(name, number, kanto, johto, hoenn, sinnoe, unova,
 					kalos, alola, type_A, type_B, evolves_F, 
-					evolves_T, occurence)
+					evolves_T, occurrence)
   VALUES
     ('Misingno'  , 000,  true,  true,  true,  true,
 	 true,  true,  true, NULL, NULL, NULL, NULL, REDO),
