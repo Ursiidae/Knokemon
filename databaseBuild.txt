@@ -5,7 +5,7 @@ CREATE TABLE user(
 user_id        UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 username       varChar(16),
 password       varChar(16),
-permission_lvl int(4),
+permission_lvl int,
 email          varChar(30),
 join_date      DATE
 );
@@ -27,7 +27,7 @@ forum          boolean
 CREATE TABLE pokemon(
 pokemon_id  UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name        varChar(30),
-number      int(802),
+number      int,
 kanto       boolean,
 johto       boolean,
 hoenn       boolean,
@@ -35,8 +35,16 @@ sinnoe      boolean,
 unova       boolean,
 kalos       boolean,
 alola       boolean,
-type_id     int(18),
-occurrence  varChar(50)
+type_A      int,
+type_B      int,
+evolves_F   int,
+evolves_T   int,
+occurrence  int
+);
+
+CREATE TABLE occur(
+occur_id UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+occuring varchar(32)
 );
 
 CREATE TABLE type(
@@ -69,13 +77,13 @@ causal      double(3),
 );
 
 CREATE TABLE userPokedex(
-mix_id int(255),
-user_id int(255),
-pokedex_id int(255)
+mix_id int,
+user_id int,
+pokedex_id int
 );
 
 CREATE TABLE pokedex(
-pokedex_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+pokedex_id UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name varChar(16),
 bulbasaur boolean,
 charmander boolean,
@@ -83,11 +91,11 @@ squirtle boolean
 );
 
 CREATE TABLE request(
-request_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-TO_user_id int(255),
-FROM_user_id int(255),
-FOR_pokemon_id int(255),
-TO_pokemon_id int(255)
+request_id     UNSIGNED INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+TO_user_id     int,
+FROM_user_id   int,
+FOR_pokemon_id int,
+TO_pokemon_id  int
 );
 
 INSERT INTO permissions(name, home, pokedex, my_pokedex, my_requests, account, profile, friends, news, forum)
@@ -133,3 +141,73 @@ INSERT INTO type(name, normal, fire, water, electric, grass, ice, fighting, pois
   ,(    'steel', 2,1,1,1,2,3,2,2,2,2,2,2,3,2,2,2,1,3)
   ,(    'fairy', 2,1,2,2,2,2,3,1,2,2,2,2,2,2,3,3,1,2)
   ;
+  
+INSERT INTO occur(occuring)
+  VALUES
+    ('legendary')
+   ,('mystical')
+   ,('rare')
+   ,('uncommon')
+   ,('common')
+   ;
+  
+INSERT INTO pokemon(name, number, kanto, johto, hoenn, sinnoe, unova,
+					kalos, alola, type_A, type_B, evolves_F, 
+					evolves_T, occurence)
+  VALUES
+    ('Misingno'  , 000,  true,  true,  true,  true,
+	 true,  true,  true, NULL, NULL, NULL, NULL, REDO),
+    ('Bulbasaur' , 001,  true,  true,  true,  true,
+	 true,  true,  true,    4,    7, NULL,    2, REDO),
+	('Ivysaur'   , 002,  true,  true,  true,  true,
+	 true,  true,  true,    4,    7,    1,    3, REDO),
+	('Venusaur'  , 003,  true,  true,  true,  true,
+ 	 true,  true,  true,    4,    7,    2, NULL, REDO),
+	('Charmander', 004,  true,  true,  true,  true,
+	 true,  true,  true,    1, NULL, NULL,    5, REDO),
+	('Charmeleon', 005,  true,  true,  true,  true,
+	 true,  true,  true,    1, NULL,    4,    6, REDO),
+	('Charizard' , 006,  true,  true,  true,  true,
+	 true,  true,  true,    1,    9,    5, NULL, REDO),
+	('Squirtle'  , 007,  true,  true,  true,  true,
+	 true,  true,  true,    2, NULL, NULL,    8, REDO),
+	('Wartortle' , 008,  true,  true,  true,  true,
+	 true,  true,  true,    2, NULL,    7,    9, REDO),
+	('Blastoise' , 009,  true,  true,  true,  true,
+	 true,  true,  true,    2, NULL,    8, NULL, REDO),
+	('Caterpie'  , 010,  true,  true,  true,  true,
+	 true,  true,  true,   11, NULL, NULL,   11,    4),
+	('Metapod'   , 011,  true,  true,  true,  true,
+	 true,  true,  true,   11, NULL,   10,   12,    4),
+	('Butterfree', 012,  true,  true,  true,  true,
+	 true,  true,  true,   11,    9,   11, NULL,    4),
+	('Weedle'    , 013,  true,  true,  true,  true,
+	 true,  true,  true,   11,    7, NULL,   14,    4),
+	('Kakuna'    , 014,  true,  true,  true,  true,
+	 true,  true,  true,   11,    7,   13,   15,    4),
+	('Beedrill'  , 015,  true,  true,  true,  true,
+	 true,  true,  true,   11,    7,   14, NULL,    4),
+	('Pidgey'    , 016,  true,  true,  true,  true,
+	 true,  true,  true,    0,    9, NULL,   17,    4),
+	('Pidgeotto' , 017,  true,  true,  true,  true,
+	 true,  true,  true,    0,    9,   16,   18,    4),
+	('Pidgeot'   , 018,  true,  true,  true,  true,
+	 true,  true,  true,    0,    9,   17, NULL,    3),
+	('Rattata'   , 019,  true,  true,  true,  true,
+	 true,  true,  true,    0, NULL, NULL,   20,    4),
+	('Raticate'  , 020,  true,  true,  true,  true,
+	 true,  true,  true,    0, NULL,   19, NULL,    4),
+	('Spearow'   , 021,  true,  true,  true,  true,
+	 true,  true,  true,    0,    9, NULL,   22,    4),
+	('Fearow'    , 022,  true,  true,  true,  true,
+	 true,  true,  true,    0,    9,   21, NULL,    4),
+	('Ekans'     , 023,  true,  true,  true,  true,
+	 true,  true,  true,    7, NULL, NULL,   24,    4),
+	('Arbok'     , 024,  true,  true,  true,  true,
+	 true,  true,  true,    7, NULL,   23, NULL,    4),
+	('Pikachu'   , 025,  true,  true,  true,  true,
+     true,  true,  true,    3, NULL, REDO,   26,    2),
+	('Raichu'    , 026,  true,  true,  true,  true,
+	 true,  true,  true,    3, NULL,   25, NULL,    2),
+	()
+	; 
