@@ -206,8 +206,11 @@ INSERT INTO pokemon(name, number, kanto, johto, hoenn, sinnoe, unova,
 	('Arbok'     , 024,  true,  true,  true,  true,
 	 true,  true,  true,    7, NULL,   23, NULL,    4),
 	('Pikachu'   , 025,  true,  true,  true,  true,
-     true,  true,  true,    3, NULL, REDO,   26,    2),
+         true,  true,  true,    3, NULL, REDO,   26,    2),
 	('Raichu'    , 026,  true,  true,  true,  true,
 	 true,  true,  true,    3, NULL,   25, NULL,    2),
-	()
+	('Sandshrew' , 027,  true, true, true, true,
+	 true, true, true,  9, NULL, NULL, 28, 4?);
+	('Sandslash' , 028,  true, true, true, true,
+	 true, true, true, 9, NULL, 27, NULL, 4?); 
 	; 
