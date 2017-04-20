@@ -2,7 +2,7 @@ CREATE DATABASE PokemonDB;
 USE PokemonDB;
 
 CREATE TABLE user(
-user_id        int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+user_id        int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 username       varChar(16),
 password       varChar(16),
 permission_lvl int,
@@ -11,7 +11,7 @@ join_date      DATE
 );
 
 CREATE TABLE permissions(
-permission_lvl int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+permission_lvl int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name           varChar(25),
 home           boolean,
 pokedex        boolean,
@@ -25,7 +25,7 @@ forum          boolean
 );
 
 CREATE TABLE pokemon(
-pokemon_id  int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+pokemon_id  int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name        varChar(30),
 number      int,
 kanto       boolean,
@@ -43,12 +43,12 @@ occur_id  int
 );
 
 CREATE TABLE occur(
-occur_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+occur_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 occuring varchar(32)
 );
 
 CREATE TABLE type(
-type_id     int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+type_id     int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name        varChar(30),
 normal      int,
 fire        int,
@@ -71,7 +71,7 @@ fairy       int
 );
 
 CREATE TABLE type_interacts(
-interact_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+interact_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name        varchar(30),
 causal      double DEFAULT NULL
 );
@@ -83,7 +83,7 @@ pokedex_id int
 );
 
 CREATE TABLE pokedex(
-pokedex_id int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+pokedex_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name varChar(16),
 bulbasaur boolean,
 charmander boolean,
@@ -91,7 +91,7 @@ squirtle boolean
 );
 
 CREATE TABLE request(
-request_id     int(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+request_id     int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 TO_user_id     int,
 FROM_user_id   int,
 FOR_pokemon_id int,
@@ -212,5 +212,39 @@ INSERT INTO pokemon(name, number, kanto, johto, hoenn, sinnoe, unova,
 	('Sandshrew' , 027,  true, true, true, true,
 	 true, true, true,  9, NULL, NULL, 28, 4?);
 	('Sandslash' , 028,  true, true, true, true,
-	 true, true, true, 9, NULL, 27, NULL, 4?); 
+	 true, true, true, 9, NULL, 27, NULL, 4?);
+	('Nidoran' , 029, true, true, false, false,
+	 false, true, false, 8, NULL, NULL, 30, 4?);
+	('Nidorina', 030, true, true, false, false,
+	 false, true, false, 8, NULL, 29, 31, 4?);
+	('Nidoqueen', 031, true, true, false, false,
+	 false, true, false, 8, 9, 30, NULL, 4?);
+	('Nidoran', 032, true, true, false, false,
+	 false, true, false, 8, NULL, NULL, 33, 4?);
+	('Nidorino', 033, true, true, false, false,
+	 false, true, false, 8, NULL, 33, 34, 4?);
+	('Nidoking', 034, true, true, false, false,
+	 false, true, false, 8, 9, 33, NULL, 4?);	 
+	('Clefairy', 035, true, true, false, true,
+	 true, false, true, 18, NULL, NULL, 36, 4?);
+	('Clefable', 036, true, true, false, true,
+	 true, false, true, 18, NULL, 35, NULL, 4?);
+	('Vulpix', 037, true, true, true, false,
+	 true, false, true, 2, NULL, NULL, 38, 4?);
+	('Ninetales', 038, true, true, true, false,
+	 true, false, true, 2, NULL, 37, NULL, 4?);
+	('Jigglypuff', 039, true, true, true, false,
+	 true, true, true, 1, 18, NULL, 40, 4?);
+	('Wigglytuff', 040, true, true, true, false,
+	 true, true, true, 1, 18, 39, NULL, 4?);
+	('Zubat', 041, true, true, true, true,
+	 true, true, true, 8, 10, NULL, 42, 4?);
+	('Golbat', 042, true, true, true, true,
+	 true, true, true, 8, 10, 41, NULL, 4?);
+	('Oddish', 043, true, true, true, false,
+	 false, true, false, 5, 8, NULL, 44, 4?);
+	('Gloom', 044, true, true, true, false,
+	 false, true, false, 5, 8, 43, 45, 4?);
+	('Vileplume', 045, true, true, true, false,
+	 false, true, false, 5, 8, NULL, 042, 4?);	 
 	; 
