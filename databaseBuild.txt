@@ -246,5 +246,262 @@ INSERT INTO pokemon(name, number, kanto, johto, hoenn, sinnoe, unova,
 	('Gloom', 044, true, true, true, false,
 	 false, true, false, 5, 8, 43, 45, 4?);
 	('Vileplume', 045, true, true, true, false,
-	 false, true, false, 5, 8, NULL, 042, 4?);	 
+	 false, true, false, 5, 8, NULL, 42, 4?);
+	('Paras', 046, true, true, false, false,
+	 false, false, true, 12, 5, NULL, 47, 4?);
+	('Parasect', 047 ,true, true, false, false,
+	 false, false, true, 12, 5, 46, NULL, 4?);
+	('Venonat', 048, true, true, false, false,
+	 false, false, false, 12, 8, NULL, 49, 4?);
+	('Venomoth', 049, true, true, false, false,
+	 false, false, false, 12 ,8, 48, NULL, 4?);
+	('Diglett', 050, true, true, false, false,
+	 false, true, true, 9, NULL, NULL, 51, 4?);
+	('Dugtrio', 051, true, true, false, false,
+	 false, true, true, 9, NULL, 50, NULL, 4?);
+	('Meowth', 052, true, true, false, false,
+	 false, false, true, 1, NULL, NULL, 53, 4?);
+	('Persian', 053, true, true, false, false,
+	 false, false, true, 1, NULL, 52, NULL, 4?);
+	('Psyduck', 054, true, true, true, true,
+	 true, true, true, 2, NULL, NULL, 55, 4?);
+	('Golduck', 055, true, true, true, true,
+	 true, true, true, 2, NULL, 54, NULL, 4?);
+	('Mankey', 056, true, true, false, false,
+	 false, false, true, 7, NULL, NULL, 57, 4?);
+	('Primeape', 057, true, true, false, false,
+	 false, false, true, 7, NULL, 56, NULL, 4?);
+	('Growlithe', 058, true, true, false, false,
+	 true, false, true, 2, NULL, NULL, 59, 4?);
+	('Arcanine', 059, true, true, false, false,
+	 true, false, true, 2, NULL, 58, NULL, 4?);
+	('Poliwag', 060, true, true, false, false,
+	 false, true, true, 3, NULL, NULL, 61, 4?);
+	('Polywhirl', 061, true, true, false, false,
+	 false, true, true, 3, NULL, 60, 62, 4?);
+	('Polywrath', 062, true, true, false, false,
+	 false, true, true, 3, 7, 61, NULL, 4?);
+	('Abra', 063, true, true, true, true,
+	 false, true, true, 11, NULL, NULL, 64, 4?);
+	('Kadabra', 064, true, true, true, true,
+	 false, true, true, 11, NULL, 63, 65, 4?);
+	('Alakazam', 065, true, true, true, true,
+	 false, true, true, 11, NULL, 64, NULL, 4?);
+	('Machop', 066, true, true, true, true,
+	 false, true, true, 7, NULL, NULL, 67,4?);
+	('Machoke', 067, true, true, true, true,
+	 false, true, true, 7, NULL, 66, 68, 4?);
+	('Machamp', 068, true, true, true, true,
+	 false, true, true, 7, NULL, 67, NULL, 4?);
+	('Bellsprout', 069, true, true, false, false,
+	 false, true, false, 5, 8, NULL, 70 , 4?);
+	('Weepinbell', 070, true, true, false, false,
+	 false, true, false, 5, 9, 69, 71, 4?);
+	('Victreebel', 071, true, true, false, false,
+	 false, true, false, 5, 9, 70, NULL, 4?);
+	('Tentacool', 072, true, true, true, true,
+	 false, true, true, 3, 8, NULL, 73, 4?);
+	('Tentacruel', 073, true, true, true, true,
+	 false, true, true, 3, 8, 72, NULL, 4?);
+	('Geodude', 074, true, true, true, true,
+	 false, true, true, 13, 9, NULL, 75, 4?);
+	('Graveler', 075, true, true, true, true,
+	 false, true, true, 13, 9, 74, 76, 4?);
+	('Golem', 076, true, true, true, true,
+	 false, true, true, 13, 9, 75, NULL, 4?);
+	('Ponyta', 077, true, true, false, true,
+	 false, false, false, 2, NULL, NULL, 78 ,4?);
+	('Rapidash', 078, true, true, false, true,
+	 false, false, false, 2, NULL, 77, NULL, 4?);
+	('Slowpoke', 079, true, true, false, false,
+	 false, true, false, 3, 11, NULL, 80, 4?);
+	('Slowbro', 080, true, true, false, false,
+	 false, true, false, 3, 11, 79, NULL, 4?);
+	('Magnemite', 081, true, true, true, true,
+	 true, true, true, 4, 17, NULL, 82, 4?);
+	('Magneton', 082, true, true, true, true,
+	 true, true, true, 4, 17, 81, NULL, 4?);
+	('Farfetch'd', 083, true, true, false, false,
+	 false, true, false, 1, 10, NULL, NULL, 4?);
+	('Doduo', 084, true, true, true, false,
+	 false, true, false, 1, 10, NULL, 85, 4?);
+	('Dodrio', 085, true, true, true , false,
+	 false, true, false, 1, 10, 84, NULL, 4?);
+	('Seel', 086, true, true, false, false,
+	 true, false, false, 3, NULL, NULL, 87, 4?);
+	('Dewgong, 087, true, true, false, false,
+	 true, false, false, 3, NULL, 86, NULL, 4?);
+	('Grimer', 088, true, true, true, false,
+	 true, false, true, 8, NULL, NULL, 89, 4?);
+	('Muk', 089, true, true, true, false,
+	 true, false, true, 8, NULL, 88, NULL, 4?);
+	('Shellder', 090, true, true, false, false,
+	 false, true, true, 3, NULL, NULL, 91, 4?);
+	('Cloyster', 091, true, true, false, false,
+	 false, true, true, 3, 6, 90, NULL, 4?);
+	('Gastly', 092, true, true, false, true,
+	 false, true, true, 14, 8, NULL, 93, 4?);
+	('Haunter', 093, true, true, false, true,
+	 false, true, true, 14, 8, 92, 94, 4?);
+	('Gengar', 094, true, true, false, true,
+	 false, true, true, 14, 8, 93, NULL, 4?);
+	('Onix', 095, true, true, false, true,
+	 true, true, false, 13, 9, NULL, NULL, 4?);
+	('Drowzee', 096, true, true, false, false,
+	 false, false, true, 11, NULL, NULL, 97, 4?);
+	('Hypno', 097, true, true, false, false,
+	 false, false, true, 11, NULL, 96, NULL , 4?);
+	('Krabby', 098, true, true, false, false,
+	 false, false, false, 3, NULL, NULL, 99, 4?);
+	('Kingler', 099, true, true, false, false,
+	 false, false, false, 3, NULL, 98, NULL, 4?);
+	('Voltorb', 100, true, true, true, false,
+	 false, true, false, 4, NULL, NULL, 101, 4?);
+	('Electrode', 101, true, true, true, false,
+	 false, true, false, 4, NULL, 100, NULL, 4?);
+	('Exeggcute', 102, true, true, false, false,
+	 false, true, true, 5, 11, NULL, 103, 4?);
+	('Exeggutor', 103, true, true, false, false,
+	 false, true, true, 5, 11, 102, NULL, 4?);
+	('Cubone', 104, true, true, false, false,
+	 false, true, true, 9, NULL, NULL, 105, 4?);
+	('Marowak', 105, true, true, false, false,
+	 false, true, true, 9, NULL, 104, NULL, 4?);
+	('Hitmonlee', 106, true, true, false, false,
+	 false, false, false, 7, NULL, NULL, NULL, 4?);
+	('Hitmonchan', 107, true, true, false, false,
+	 false, false, false, 7, NULL, NULL, NULL, 4?);
+	('Lickitung', 108, true, true, false, true,
+	 true, true, false, 1, NULL, NULL, NULL, 4?);
+	('Koffing', 109, true, true, true, false,
+	 true, false, false, 8, NULL, NULL, 110, 4?);
+	('Weezing', 110, true, true, true, false,
+	 true, false, false, 8, NULL, 109, NULL, 4?);
+	('Rhyhorn', 111, true, true, true, true,
+	 false, true, false, 9, 13, NULL, 112, 4?);
+	('Rhydon', 112, true, true, true, true,
+	 false, true, false, 9, 13, 111, NULL, 4?);
+	('Chansey', 113, true, true, false, true,
+	 false, false, true, 1, NULL, NULL, NULL, 4?);
+	('Tangela', 114, true, true, false, true,
+	 true, false, false, 5, NULL, NULL, NULL, 4?);
+	('Kangaskhan', 115, true, true, false, false,
+	 false, true, true, 1, NULL, NULL, NULL, 4?);
+	('Horsea', 116, true, true, true, false,
+	 false, true, false, 3, NULL, NULL, 117, 4?);
+	('Seadra', 117, true, true, true, false,
+	 false, true, false, 3, NULL, 116, NULL, 4?);
+	('Goldeen', 118, true, true, true, true,
+	 false, true, true, 3, NULL, NULL, 119, 4?);
+	('Seaking', 119, true, true, true, true,
+	 false, true, true, 3, NULL, 118, NULL, 4?);
+	('Staryu', 120, true, true, true, false,
+	 true, true, true, 3, NULL, NULL, 121, 4?);
+	('Starmie', 121, true, true, true, false,
+	 true, true, true, 3, 11, 120, NULL, 4?);
+	('Mr. Mime', 122, true, true, false, true,
+	 false, true, false, 11, 18, NULL, NULL, 4?);
+	('Scyther', 123, true, true, false, true,
+	 false, true, true, 12, 10, NULL, 212, 4?);
+	('Jynx', 124, true, true, false, false,
+	 false, true, false, 6, 11, 238, NULL, 4?);
+	('Electabuzz', 125, true, true, false, true,
+	 true, false, true, 4, NULL, 239, 466, 4?);
+	('Magmar', 126, true, true, false, true,
+	 true, false, true, 2, NULL, 240, 467, 4?);
+	('Pinsir', 127, true, true, true, false,
+	 true, true, true, 12, NULL, NULL, NULL, 4?);
+	('Tauros', 128, true, true, false, false,
+	 false, true, true, 1, NULL, NULL, NULL, 4?);
+	('Magikarp', 129, true, true, true, true,
+	 false, true, true, 3, NULL, NULL, 130, 4?);
+	('Gyarados', 130, true, true, true, true,
+	 false, true, true, 3, NULL, 129, NULL, 4?);
+	('Lapras', 131, true, true, false, false,
+	 true, true, true, 3, 6, NULL, NULL, 4?);
+	('Ditto', 132, true, true, false, false,
+	 true, true, true, 1, NULL, NULL, NULL, 4?);
+	('Eevee', 133, true, true, false, true,
+	 true, true, true, 1, NULL, NULL, 8 different pokemon, 4?);
+	('Vaporeon', 134, true, true, false, true,
+	 true, true, true, 3, NULL, 133, NULL, 4?);
+	('Jolteon', 135, true, true, false, true,
+	 true, true, true, 4, NULL, 133, NULL, 4?);
+	('Flareon', 136, true, true, false, true,
+	 true, true, true, 2, NULL, 133, NULL, 4?);
+	('Porygon', 137, true, true, false, true,
+	 false, false, true, 1, NULL, NULL, 233, 4?);
+	('Omanyte', 138, true, true, false, false,
+	 false, false, false, 13, 3, NULL, 139, 4?);
+	('Omastar', 139, true, true, false, false,
+	 false, false, false, 13, 3, NULL, 139, 4?);
+	('Kabuto', 140, true, true, false, false,
+	 false, false, false, 13, 3, NULL, 141, 4?);
+	('Kabutops', 141, true, true, false, false,
+	 false, false, false, 13, 3, 140, NULL, 4?);
+	('Aerodactyl', 142, true, true, false, false,
+	 false, true, true, 13, 10, NULL, NULL, 4?);
+	('Snorlax', 143, true, true, false, true,
+	 false, true, true, 1, NULL, 446, NULL, 4?),
+	('Articuno', 144, true, true, false, false,
+	 false, true, false, 6, 10, NULL, NULL, 1),
+	('Zapdos', 145, true, true, false, false,
+	 false, true, false, 4, 10, NULL, NULL, 1),
+	('Moltres', 146, true, true, false, false,
+	 false, true, false, 2, 10, NULL, NULL, 1),
+	('Dratini', 147, true, true, false, false,
+	 false, true, true, 15, NULL, NULL, 148, 4?),
+	('Dragonair', 148, true, true, false, false,
+	 false, true, true, 15, NULL, 147, 149, 4?),
+	('Dragonite', 149, true, true, false, false,
+	 false, true, true, 15, 10, 148, NULL, 1?(pseudolegendary)), 
+        ('Mewtwo', 150, true, true, false, false,
+	 false, true, false, 11, NULL, NULL, NULL, 1),
+	('Mew', 151, true, true, false, false,
+	 false, false, false, 11, NULL, NULL, NULL, 1),
+	('Chikorita', 152, false, true, false, false,
+	 false, false, false, 5, NULL, NULL, 153, 4?),
+	('Bayleef', 153, false, true, false, false,
+	 false, false, false 5, NULL, 152, 154, 4?),
+	('Meganium', 154, false, true, false, false,
+	 false, false, false, 5, NULL, 153, NULL, 4?),
+	('Cyndaquil', 155, false, true, false, false,
+	 false, false, false, 2, NULL, NULL, 156, 4?),
+	('Quilava', 156, false, true, false, false,
+	 false, false, false, 2, NULL, 155, 157, 4?),
+	('Typhlosion', 157, false, true, false, false,
+	 false, false, false, 2, NULL, 156, NULL, 4?),
+	('Totodile', 158, false, true, false, false,
+	 false, false, false, 3, NULL, NULL, 159, 2?),
+	('Croconaw', 159, false, true, false, false,
+	 false, false, false, 3, NULL, 158, 159, 2?),
+	('Feraligatr', 160, false, true, false, false,
+	 false, false, false, 3, NULL, 159, NULL, 2?),
+	('Sentret', 161, false, true, false, false,
+	 false, true, false, 1, NULL, NULL, 162, 4?),
+	('Furret', 162, false, true, false, false,
+	 false, true, false, 1, NULL, 161, NULL, 4?),
+	('Hoothoot', 163, false, true, false, true,
+	 false, true, false, 1, 10, NULL, 164, 4?),
+	('Noctowl'
+	
+	
 	; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
