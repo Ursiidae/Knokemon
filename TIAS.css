@@ -1,0 +1,168 @@
+/*
+These following ones create the opening screen for index.
+
+*/
+body{
+	background-image:  url("websitepics/background.png");
+	
+}
+a:link{
+    text-decoration: none;
+	color: black;
+}
+.open{
+	position: fixed; 
+	z-index: 1000;
+}
+.left,
+.right{
+	width: 50%;
+	height: 100%;
+	opacity: .5;
+}
+.left{
+	top: 0px;
+	right: 0px;
+	background: red;
+}
+.right{
+	top:0px;
+	right: 50%;
+	background: black;
+}
+.circle{
+	border-radius: 90px;
+	width: 180px;
+	height: 180px;
+	color: white;
+	border: solid black 2px;
+	top:35%;
+	left: 43%;
+}
+.circle > div{
+	position: relative;
+	
+}
+.bottom,
+.top{
+	height: 90px;
+	width: 180px;
+}
+.top{
+	border-top-left-radius: 180px;
+	border-top-right-radius: 180px;
+    background: red;
+}
+.bottom{
+	border-bottom-left-radius: 180px;
+	border-bottom-right-radius: 180px;
+	background: white;
+}
+.center{
+	width: 40px;
+	height: 40px;
+	background: white;
+	border: solid black 3px;
+	border-radius: 50%;
+	top: -62%;
+	right:-40%; 
+}
+.center:hover{
+	background:gray;
+}
+
+.rotate:hover{
+	transform: rotate(90deg);
+		-webkit-transform : rotate(90deg);
+		-moz-transform    : rotate(90deg);
+		-ms-transform     : rotate(90deg);
+		-o-transform      : rotate(90deg);
+
+}
+
+/*
+After opening screen, opens to a pokedex, that clicks open,
+here you login or sign up for your account.
+*/
+.pokedex{
+	position: fixed;
+	height: 450px;
+	width: 300px;
+	background: red;
+	top: 20%;
+	left: 38%;
+	border-radius: 5px;
+	box-shadow: 10px 10px 5px #888888;
+}
+.pokedex > div > div {
+	position: relative;
+	display: inline-block;
+}
+.top>div:first-child{
+	height:60px;
+	width: 60px;
+	border-radius:45px;
+	background: blue;
+	border: solid white 3px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.top>div:nth-child(n+2){
+	height: 10px;
+	width:10px;
+	border-radius:5px;
+	border: solid black 1px;
+	margin-bottom: 50px;
+}
+
+.top>div:nth-child(2){
+	background: red;
+}
+.top>div:nth-child(3){
+	background: yellow;
+}
+.top>div:nth-child(4){
+	background: green;
+}
+.form>div{
+	text-align: center;
+	position: fixed;
+	
+}
+.form >div:first-child{
+	width: 250px;
+	height: 200px;
+	background: rgb(220, 220, 220);
+	margin-left: 25px;
+	font-size: small;
+	font-family: arial;
+	overflow-y: auto;
+}
+.form>div:nth-child(2){
+	width: 0;
+	height: 0;
+	border-bottom: 70px solid red;
+	border-right: 75px solid transparent;
+	margin-top: 130px;
+	margin-left:-250px;
+	position: fixed;
+}
+.form>div>p{
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right:5px;
+	margin-bottom:10px;
+	
+}
+.buttons{
+	text-align: center;
+	
+}
+.buttons>button{
+	background: blue;
+	color: white;
+	border: transparent;
+	width: 75px;
+	margin-top: 50px;
+}
+

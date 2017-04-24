@@ -1,0 +1,102 @@
+body{
+	background-image: url("websitepics/background.png");
+	
+}
+a{
+	text-decoration: none;
+	color: black;
+	
+}
+
+.pokedex{
+	position: fixed;
+	height: 80%;
+	width: 80%;
+	background: red;
+	top: 10%;
+	left: 10%;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #888888;
+}
+.pokedex > div > div {
+	position: relative;
+	display: inline-block;
+}
+.top>div:first-child{
+	height:60px;
+	width: 60px;
+	border-radius:45px;
+	background: blue;
+	border: solid white 3px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.top>div:nth-child(n+2){
+	height: 10px;
+	width:10px;
+	border-radius:5px;
+	border: solid black 1px;
+	margin-bottom: 50px;
+}
+
+.top>div:nth-child(2){
+	background: red;
+}
+.top>div:nth-child(3){
+	background: yellow;
+}
+.top>div:nth-child(4){
+	background: green;
+}
+
+.menu {
+  width: 20%;	
+  margin-left: 10px;
+}
+.menu>ul>li>div{
+	float: left;
+    margin-top: 3px;
+}
+.body>div{
+	float: left;
+}
+.body>div:nth-child(2){
+	position: fixed;
+	
+}
+.menu > ul > li {
+	list-style:none;
+}
+.menu > ul > li > ul{
+	display: none;
+}
+.form {
+	width: 50%;
+	height: 60%;
+	background:rgb(220, 220, 220);
+	margin-left: 5%;
+}
+.body>div:nth-child(3){
+	width: 0;
+	height: 0;
+	border-bottom: 120px solid red;
+	border-right: 130px solid transparent;
+	top: 68%;
+    left: 30%;
+	position: fixed;
+	
+}
+.arrow-down {
+	width: 0px;
+	height: 0px;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid blue;
+}
+.arrow-right{
+	width: 0px; 
+	height: 0px;
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 6px solid blue;
+}
