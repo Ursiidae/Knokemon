@@ -1,8 +1,6 @@
-/*Cassidy && Dylan */
-
 /*
 These following ones create the opening screen for index.
-
+CASSIDY AND DYLAN
 */
 body{
 	background-image:  url("websitepics/background.png");
@@ -149,11 +147,19 @@ here you login or sign up for your account.
 	margin-left:-250px;
 	position: fixed;
 }
-.form>div>p{
+.form>div>div>p{
 	margin-top: 10px;
 	margin-left: 5px;
 	margin-right:5px;
 	margin-bottom:10px;
+	
+}
+.logn{
+	display:none;
+	
+}
+.sign{
+	display:none;
 	
 }
 .buttons{
