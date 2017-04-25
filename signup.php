@@ -12,17 +12,6 @@
           href = "TIAS.css" />
   </head>
   <body>
-    <div class="open left">
-	</div>
-	<div class="open right">
-	</div>
-	<div class="open circle rotate"> 
-	  <div class="open top">
-	  </div>
-	  <div class="open bottom">
-	  </div>
-	  <div class="open center">
-	  </div>
 	</div>
 	<div class="pokedex"> 
 	  <div class="top">
@@ -37,12 +26,12 @@
 	  </div>
 	  <div class="form">
 	    <div class="info">
-		  <form action="home.html" style="text-align:right" method="post">
+		  <form action="home.php" style="text-align:right" method="post">
 		  Username: <input type="text" name="name"><br>
 		  Password: <input type="password" name="pass"><br>
 		  Email   : <input type="text" name="mail"><br>
 		  Birthday: <input type="date" name="bday"><br>
-		  <input type="submit" value="Submit">
+		  <input type="submit" value="submit">
 		  </form>
 		</div>
 		<div>
@@ -58,5 +47,30 @@
 
 
 <?php
-
+ require_once('login.php');
+ $conn = new mysqli($host, $user, $pass, $data);
+ if($conn->connect_error) die($conn -> connect_error);
+ echo "ahh it worked!";
+ 
+ if (isset($_POST['name'])
+     isset($_POST['pass'])
+     isset($_POST['mail'])
+	 isset($_POST['bday']))
+    {
+	 $uname  = get_post($conn, 'name');
+	 $upass  = get_post($conn, 'pass');
+	 $umail  = get_post($conn, 'mail');
+	 $ubday  = get_post($conn, 'bday');
+	 
+	 $query  = "INSERT INTO user(username, password, permission_lvl, join_date) VALUES('$uname', '$upass', 1, '$umail', '2017-04-26')";
+	 $result = $conn->query($query);
+	 if(!$result) echo "hi";
+	}
+	
+	$result->close();
+	$conn->close();
+	
+	function get_post($conn, $var){
+		return $conn->real_escape_string($_POST[$var]);
+	}
 ?>
