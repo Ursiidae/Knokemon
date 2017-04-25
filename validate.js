@@ -1,3 +1,6 @@
+/*Cassidy && Dylan */
+
+
 function validateForename(field)
 {
   return (field == "") ? "No Forename was entered. \n" : ""
