@@ -1,3 +1,6 @@
+/*Cassidy && Dylan */
+
+
 $(document).ready(function(){
 	$('.center').click(function(){
 		$('.open').css({
