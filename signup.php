@@ -5,6 +5,20 @@
 	</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
+	<script src="validate.js">
+	</script>
+	<script src="cookies.js">
+	</script>
+	<script>
+	  function validate(form){
+		fail =  validateUsername(form.user.value)
+		fail += validatePassword(form.pass.value)
+        fail += validateEmail(form.mail.value)		
+		
+		if(fail == "")   return true
+		else{alert(fail):return false}
+	  }
+	</script>
 	<script src="TIAS.js">
 	</script>
 	<link rel = "stylesheet"
@@ -12,18 +26,6 @@
           href = "TIAS.css" />
   </head>
   <body>
-    <div class="open left">
-	</div>
-	<div class="open right">
-	</div>
-	<div class="open circle rotate"> 
-	  <div class="open top">
-	  </div>
-	  <div class="open bottom">
-	  </div>
-	  <div class="open center">
-	  </div>
-	</div>
 	<div class="pokedex"> 
 	  <div class="top">
 		  <div>
@@ -37,12 +39,18 @@
 	  </div>
 	  <div class="form">
 	    <div class="info">
-		  <form action="signup.php" style="text-align:right" method="post">
+		  <form action="home.php" 
+		        style="text-align:right" 
+				method="post"
+				onSubmit="return validate(this)">
 		  Username: <input type="text" name="name"><br>
 		  Password: <input type="password" name="pass"><br>
 		  Email   : <input type="text" name="mail"><br>
 		  Birthday: <input type="date" name="bday"><br>
-		  <input type="submit" value="Submit">
+		  <input type="submit" 
+		         value="Sign Up"
+				 onclick="setCookie('user', form.name.value, 1);
+				          setCookie('pass', form.pass.value, 1);">
 		  </form>
 		</div>
 		<div>
@@ -61,7 +69,6 @@
 require_once('login.php');
 $conn = new mysqli($host, $user, $pass, $data);
 if($conn->connect_error) die($conn -> connect_error);
-
 if (isset($_POST['name']) &&
     isset($_POST['pass']) &&
     isset($_POST['mail']) &&

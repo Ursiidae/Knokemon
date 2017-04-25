@@ -7,6 +7,8 @@
 	</script>
 	<script src="TIAS.js">
 	</script>
+	<script src="cookies.js">
+	</script>
 	<link rel = "stylesheet"
           type = "text/css"
           href = "TIAS.css" />
@@ -37,7 +39,7 @@
 	  </div>
 	  <div class="form">
 	    <div class="info">
-		  <p>	
+		  <div id="open"><p>	
 		  "The world of pokemon--incredible to behold, the home to the most
 		  mysterious of all creatures. In the forest, up in the skies, and in the 
 		  seas; Pokemon can be found in all places around this world. The lives 
@@ -66,7 +68,41 @@
 		  To access all parts of Kno-kemon, you must sign-up for an account or
   		  log into your already existing one. Click the buttons below to decide
 		  which one is best for you!
-		  </p>
+		  </p></div>
+		  <div id="sign">
+		    <form method="post" action="signup.php">
+			  <table>
+			   <tr>
+ 			     <td>Username:</td>
+				 <td><input type="text" name="user"></td>
+			   </tr>
+			   <tr>
+			     <td>Password:</td>
+				 <td><input type="password" name="pass"></td>
+			   </tr>
+			  </table>	  
+			    <input type="submit" name="submit" value="Submit">
+			</form>
+		  </div>
+		  <div id="logn">
+		  	<form method="post" action="home.php">
+			  <table>
+			   <tr>
+ 			     <td>Username:</td>
+				 <td><input type="text" name="user"></td>
+			   </tr>
+			   <tr>
+			     <td>Password:</td>
+				 <td><input type="password" name="pass"></td>
+			   </tr>
+			  </table>	
+			  <input type="submit" 
+			         name="submit" 
+					 value="Log-In"
+					 onclick="setCookie('user', form.user.value, 1);
+				              setCookie('pass', form.pass.value, 1);>
+			</form>
+		  </div>
 		</div>
 		<div>
 		</div>
