@@ -69,7 +69,8 @@ ghost       int,
 dragon      int,
 dark        int,
 steel       int,
-fairy       int
+fairy       int,
+changes     int
 );
 
 CREATE TABLE type_interacts(
@@ -142,6 +143,7 @@ INSERT INTO type(name, normal, fire, water, electric, grass, ice, fighting, pois
   ,(     'dark', 2,2,2,2,2,2,1,2,2,2,3,2,2,3,2,1,2,1)
   ,(    'steel', 2,1,1,1,2,3,2,2,2,2,2,2,3,2,2,2,1,3)
   ,(    'fairy', 2,1,2,2,2,2,3,1,2,2,2,2,2,2,3,3,1,2)
+  ,(  'changes', 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
   ;
   
 INSERT INTO occur(occuring)
@@ -1674,7 +1676,7 @@ INSERT INTO pokemon(name, number, kanto, johto, hoenn, sinnoe, unova,
     ('Shiinotic', 756, false, false, false, false,
      false, false, true, 5, 18, 755, NULL, 6),
     ('Salandit', 757, false, false, false, false,
-     false, false, true, 8, 2, NULL, 758 if female, 6),
+     false, false, true, 8, 2, NULL, 758, 6),
     ('Salazzle', 758, false, false, false, false,
      false, false, true, 8, 2, 757, NULL, 6),
     ('Stufful', 759, false, false, false, false,
