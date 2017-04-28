@@ -3,28 +3,28 @@
   FROM user, permissions
  WHERE user.permission_lvl = permissions.permission_lvl; 
 
-#--is supposed to show who the request is from and who it is to and the pokemon they are to trade. 
+#--shows who the request is from, who it is to, when the request was made, and the pokemon they are to trade. 
 SELECT user.username, user.username, pokemon.name, pokemon.name, request.DATE_OF
-FROM requests, pokemon, user
+FROM request, pokemon, user
 WHERE user.username = "casoleita" OR user.username = "stexmex"
   AND request.TO_user_id = user.user_id
   AND request.FROM_user_id = user.user_id
-  AND requests.FOR_pokemon_id = pokemon.pokemon_id
-  AND requests.TO_pokemon_id = pokemon.pokemon_id
-  ;
+  AND request.FOR_pokemon_id = pokemon.pokemon_id
+  AND request.TO_pokemon_id = pokemon.pokemon_id
+;
 
 #--shows which pokemon are of the grass type. 
 SELECT pokemon.name
   FROM type, pokemon
- WHERE type.name = grass
-   AND type.type_id = pokemon.type_id
+ WHERE type.name = 'grass'
+   AND type.type_id = pokemon.type_A
    ;
 
 #--what pokemon are not in kanto and what their types are.
 SELECT pokemon.name, type.name
   FROM pokemon, type
  WHERE pokemon.kanto = FALSE
-   AND pokemon.type_id = type.type_id
+   AND pokemon.type_A = type.type_id
    ;
 
 #--what types of pokemon a certain pokemon is immune to
