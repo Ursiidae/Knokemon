@@ -97,7 +97,8 @@ request_id     int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 TO_user_id     int,
 FROM_user_id   int,
 FOR_pokemon_id int,
-TO_pokemon_id  int
+TO_pokemon_id  int,
+DATE_OF   DATETIME
 );
 
 INSERT INTO permissions(name, home, pokedex, my_pokedex, my_requests, account, profile, friends, news, forum)
